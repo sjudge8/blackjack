@@ -1,0 +1,21 @@
+General Notes:
+-I know everyone has a specific style/formatting regarding spacing and brackets, etc. If I'm working in an existing
+codebase, I do adapt to the existing formatting so everything stays consistent and easy to read.
+-I know formal unit testing would be more thorough than just using the test() method in the App class and is valuable to have in a
+codebase, especially at an enterprise level. I don't currently have any meaningful experience with unit testing and unit testing
+frameworks, but it is something I can and would like to learn.
+-The design and organization of this project is all my own. Below I documented everything that I googled for this. When I did fall back
+to Google I intentionally steered clear of pages mentioning implementing playing cards so I wouldn't be influenced.
+-I'm very comfortable with SVN--everywhere I've worked has used SVN. If you use git, that's definitely something I've wanted to learn
+and get comfortable with.
+
+Deck.java:
+-I googled how to iterate over enum values for the constructor:
+https://stackoverflow.com/questions/1104975/a-for-loop-to-iterate-over-an-enum-in-java
+-I googled how to get a random int for the shuffleDeck() method:
+https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java
+
+Card.java:
+-I googled the right playing card term for "Rank" so I could properly differentiate it from "Value"
+-I knew I wanted an enum in order to define the available ranks but I did google how to do it:
+https://stackoverflow.com/questions/13792110/java-enum-return-int
