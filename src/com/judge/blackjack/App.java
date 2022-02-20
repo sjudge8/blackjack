@@ -5,7 +5,6 @@ public class App {
 	public static void main(String[] args) {
 		Game gm = new Game(4, 3);
 		gm.simulate();
-		//test();
 	}
 	
 	private static void test()

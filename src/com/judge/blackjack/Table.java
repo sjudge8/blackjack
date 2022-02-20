@@ -18,24 +18,23 @@ public class Table {
 	{
 		Card card;
 
-		//draw next card if one is available, otherwise shuffle and use discardPile
-		if (drawPile.size() > 0)
-		{
-			card = drawPile.removeCard();
-			activeCards.addCard(card);
-			return card;
-		}
-		else
+		//if the draw pile is empty we need to re-fill it from the discard pile
+		if (drawPile.size() == 0)
 		{
 			drawPile = discardPile.clone();
 			drawPile.shuffleDeck();
-			return drawPile.removeCard();
+			discardPile.emptyDeck();
 		}
+					
+		card = drawPile.removeCard();
+		activeCards.addCard(card);
+		return card;
 	}
 	
 	public void clear()
 	{
-		for(int i = 0; i < activeCards.size(); i++)
+		int activeSize = activeCards.size();
+		for(int i = 0; i < activeSize; i++)
 		{
 			discardPile.addCard(activeCards.removeCard());
 		}

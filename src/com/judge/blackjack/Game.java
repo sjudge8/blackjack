@@ -39,7 +39,7 @@ public class Game {
 		
 		printRoundResult(winners);
 		
-		table.clear();		
+		table.clear();
 	}
 	
 	//print hand and returns its value
