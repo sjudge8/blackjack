@@ -5,6 +5,7 @@ public class App {
 	public static void main(String[] args) {
 		Game gm = new Game(4, 3);
 		gm.simulate();
+		//test();
 	}
 	
 	private static void test()
@@ -12,18 +13,13 @@ public class App {
 		Deck testdeck = new Deck();
 		System.out.println(testdeck);
 		
-		testdeck.shuffleDeck();
-		System.out.println(testdeck);
-		System.out.println("Full deck is size " + testdeck.getCards().size());
-		
-		for(int i = 0; i < 10; i++)
+		for(int i = 0; i < 47; i++)
 		{
-			Card tmpcard = testdeck.drawCard();
+			Card tmpcard = testdeck.removeCard();
 			System.out.println(tmpcard);
 		}
 		
 		System.out.println(testdeck);
-		System.out.println("Deck after drawings is size " + testdeck.getCards().size());
 		
 		Game gm = new Game(4, 3);
 		gm.simulate();

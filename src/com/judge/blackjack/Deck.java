@@ -6,10 +6,12 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Deck
 {
 
-	private ArrayList<Card> cards = new ArrayList<Card>(52);
+	private ArrayList<Card> cards;
 
 	public Deck()
 	{
+		cards = new ArrayList<Card>(52);
+
 		for (Card.Suit suit : Card.Suit.values())
 		{
 			for (Card.Rank rank : Card.Rank.values())
@@ -17,6 +19,8 @@ public class Deck
 				cards.add(new Card(suit, rank));
 			}
 		}
+		
+		shuffleDeck();
 	}
 	
 	public void shuffleDeck()
@@ -32,25 +36,39 @@ public class Deck
 		cards = tmpDeck;
 	}
 	
-	public Card drawCard()
+	public Card removeCard()
 	{
-		//draw next card if one is available, otherwise reshuffle deck
-		if (cards.size() > 0)
-		{
-			return cards.remove(0);
-		}
-		else
-		{
-			shuffleDeck();
-			return cards.remove(0);
-		}
+		return cards.remove(0);
 	}
-		
-	public ArrayList<Card> getCards()
+	
+	public void addCard(Card card)
 	{
-		return cards;
+		cards.add(card);
+	}
+	
+	public Deck emptyDeck()
+	{
+		cards = new ArrayList<Card>();
+		return this;
+	}
+	
+	public int size()
+	{
+		return cards.size();
 	}
 
+	public Deck clone()
+	{
+		Deck destination = new Deck().emptyDeck();
+		
+		for (Card c : cards)
+		{
+			destination.addCard(c);
+		}
+		
+		return destination;
+	}
+	
 	public String toString()
 	{
 		String output = "";

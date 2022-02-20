@@ -7,22 +7,20 @@ public class Game {
 
 	private int numPlayers;
 	private int numRounds;
-	private Deck deck;
+	private Table table;
 	
 	public Game(int numPlayers, int numRounds)
 	{
 		this.numPlayers = numPlayers;
 		this.numRounds = numRounds;
-		deck = new Deck();
+		table = new Table();
 	}
 	
 	private void simulateRound()
 	{
 		int highScore = 0, score;
 		ArrayList<Integer> winners = new ArrayList<Integer>();
-		
-		deck.shuffleDeck();
-		
+				
 		for (int i = 1; i < numPlayers + 1; i++)
 		{
 			score = simulateHand();
@@ -39,17 +37,18 @@ public class Game {
 			}
 		}
 		
-		printRoundResult(winners);		
+		printRoundResult(winners);
 		
+		table.clear();		
 	}
 	
-	//returns value of the hand
+	//print hand and returns its value
 	private int simulateHand()
 	{
 		Card card1, card2;
 		
-		card1 = deck.drawCard();
-		card2 = deck.drawCard();
+		card1 = table.drawCard();
+		card2 = table.drawCard();
 		
 		System.out.print(card1);
 		System.out.println(card2);
@@ -57,7 +56,7 @@ public class Game {
 		return card1.getValue() + card2.getValue();
 	}
 
-	//given a list of the player numbers who wons, print the result
+	//given a list of the player numbers who won, print the result
 	private void printRoundResult(List<Integer> winners)
 	{
 		String roundSummary;
@@ -84,6 +83,7 @@ public class Game {
 		}
 		
 		System.out.println(roundSummary + "\n");
+
 	}
 	
 	public void simulate()
