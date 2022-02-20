@@ -3,7 +3,8 @@ package com.judge.blackjack;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Deck {
+public class Deck
+{
 
 	private ArrayList<Card> cards = new ArrayList<Card>(52);
 
@@ -33,21 +34,18 @@ public class Deck {
 	
 	public Card drawCard()
 	{
-		//draw next card if one is available, otherwise reshuffle entire deck
-		//TODO: this isn't smart enough to realize which cards are out on the table to prevent adding
-		//them back into the deck (creating duplicate cards) in the case where you run out of cards mid-game
+		//draw next card if one is available, otherwise reshuffle deck
 		if (cards.size() > 0)
 		{
 			return cards.remove(0);
 		}
 		else
 		{
-			cards = new Deck().cards;
 			shuffleDeck();
-			return this.cards.remove(0);
+			return cards.remove(0);
 		}
 	}
-	
+		
 	public ArrayList<Card> getCards()
 	{
 		return cards;
@@ -57,9 +55,9 @@ public class Deck {
 	{
 		String output = "";
 		
-		for(int i=0; i < this.cards.size(); i++)
+		for(int i=0; i < cards.size(); i++)
 		{
-			output += this.cards.get(i);
+			output += cards.get(i);
 		}
 		
 		return output;

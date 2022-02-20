@@ -3,7 +3,8 @@ package com.judge.blackjack;
 public class App {
 
 	public static void main(String[] args) {
-		test();
+		Game gm = new Game(4, 3);
+		gm.simulate();
 	}
 	
 	private static void test()
@@ -23,5 +24,8 @@ public class App {
 		
 		System.out.println(testdeck);
 		System.out.println("Deck after drawings is size " + testdeck.getCards().size());
+		
+		Game gm = new Game(4, 3);
+		gm.simulate();
 	}
 }
