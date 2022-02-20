@@ -16,6 +16,7 @@ Deck.java:
 https://stackoverflow.com/questions/1104975/a-for-loop-to-iterate-over-an-enum-in-java
 -I googled how to get a random int for the shuffleDeck() method:
 https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java
+-I did go down a few internet rabbit holes refreshing myself on clone() and creating a deep copy
 
 Card.java:
 -I googled the right playing card term for "Rank" so I could properly differentiate it from "Value"
