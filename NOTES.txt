@@ -8,6 +8,8 @@ frameworks, but it is something I can and would like to learn.
 to Google I intentionally steered clear of pages mentioning implementing playing cards so I wouldn't be influenced.
 -I'm very comfortable with SVN--everywhere I've worked has used SVN. If you use git, that's definitely something I've wanted to learn
 and get comfortable with.
+-I included the binary in git for convenience but I do realize versioning artifacts with maven and storing them in a repo like
+artifactory or nexus is the way to go, NOT to commit them to source control
 
 Deck.java:
 -I googled how to iterate over enum values for the constructor:
